@@ -263,11 +263,7 @@ def undistort_scene(cfg, scene_name):
 
                 # Store undistorted modality
                 new_path = Path(cfg.root) / scene_name / new_modality_path
-                if "mask" in frame_modality:
-                    format_type = "binary"
-                else:
-                    format_type = None
-                store_data(new_path, undistorted_modality, format_type=format_type)
+                store_data(new_path, undistorted_modality)
 
     # --- Update frame_modalities with undistorted modalities ---
     frame_modalities = {}
